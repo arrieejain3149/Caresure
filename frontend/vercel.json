@@ -1,0 +1,21 @@
+{
+  "buildCommand": "git config lfs.url https://github.com/aman67032/CareSure_Frontend_EBM.git/info/lfs && git lfs pull || echo 'Git LFS pull failed, continuing build...' && npm run build",
+  "installCommand": "git lfs install || echo 'Git LFS install skipped' && npm install",
+  "framework": "nextjs",
+  "headers": [
+    {
+      "source": "/(.*\\.glb)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "model/gltf-binary"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
+
