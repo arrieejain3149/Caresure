@@ -71,15 +71,13 @@ export default function PatientsPage() {
               <div className="flex-shrink-0 flex items-center">
                 <Link href="/dashboard" className="flex items-center gap-3">
                   <Image
-                    src="/logo.png"
+                    src="/logo-dark-transparent.png"
                     alt="CareSure Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain"
+                    width={150}
+                    height={45}
+                    className="object-contain h-8 sm:h-10 w-auto"
+                    priority
                   />
-                  <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 via-rose-500 to-violet-600 bg-clip-text text-transparent drop-shadow-sm hover:from-orange-500 hover:via-rose-400 hover:to-violet-500 transition-all duration-300">
-                    CareSure
-                  </span>
                 </Link>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">

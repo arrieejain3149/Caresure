@@ -50,7 +50,7 @@ export default function SignupPage() {
           <div className="text-center mb-6 sm:mb-8">
             <div className="flex justify-center mb-4 sm:mb-6">
               <img 
-                src="/logo.png" 
+                src="/logo-dark-transparent.png" 
                 alt="CareSure Logo" 
                 className="h-16 sm:h-20 w-auto drop-shadow-lg"
               />

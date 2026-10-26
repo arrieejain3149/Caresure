@@ -27,11 +27,11 @@ export default function Home() {
             <img 
               src="/logo.png" 
               alt="CareSure Logo" 
-              className="h-32 sm:h-40 md:h-44 w-auto drop-shadow-lg"
+              className="h-24 sm:h-32 md:h-36 w-auto drop-shadow-2xl"
             />
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg px-4">
-            CareSure: Smart Medication Management
+            Smart Medication Management
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-2xl mx-auto font-semibold drop-shadow-md px-4">
             Caregivers stay informed. Elders stay safe.
