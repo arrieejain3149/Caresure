@@ -219,42 +219,42 @@ export default function PatientLoginPage() {
       {/* Password Change Modal */}
       {showPasswordChange && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl max-w-md w-full border border-orange-200/50 relative overflow-hidden">
+          <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl max-w-md w-full border border-[#ede0d0] relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-violet-400 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-400 rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ede0d0] rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#e5d5c3] rounded-full blur-3xl"></div>
             </div>
 
             <div className="relative z-10 p-6">
               <div className="text-center mb-6">
-                <div className="mx-auto w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mx-auto w-16 h-16 bg-[#ede0d0] rounded-full flex items-center justify-center mb-4 shadow-sm border border-[#e5d5c3]">
+                  <svg className="w-8 h-8 text-[#8c4a35]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-orange-600 via-rose-500 to-violet-600 bg-clip-text text-transparent">
+                <h2 className="text-2xl font-bold text-[#4a2e1e]">
                   Change Your Password
                 </h2>
-                <p className="text-amber-700/70 mt-2">Please set a new password for your account</p>
+                <p className="text-[#7c6a5a] mt-2">Please set a new password for your account</p>
               </div>
 
               <form onSubmit={handlePasswordChange} className="space-y-4">
                 {passwordChangeError && (
-                  <div className="bg-red-100/70 border border-red-300/50 text-red-800 px-4 py-3 rounded-xl backdrop-blur-sm text-sm">
+                  <div className="bg-[#fbf0ea] border border-[#ede0d0] text-[#8c4a35] px-4 py-3 rounded-xl backdrop-blur-sm text-sm">
                     {passwordChangeError}
                   </div>
                 )}
 
                 <div>
-                  <label htmlFor="changePatientEmail" className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="changePatientEmail" className="block text-sm font-semibold text-[#4a2e1e] mb-2">
                     Email
                   </label>
                   <input
                     id="changePatientEmail"
                     type="email"
                     required
-                    className="w-full px-4 py-3 border border-orange-200/50 rounded-xl bg-white/70 backdrop-blur-sm text-amber-900 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                    className="w-full px-4 py-3 border border-[#ede0d0] rounded-xl bg-white/70 backdrop-blur-sm text-[#4a2e1e] focus:outline-none focus:ring-2 focus:ring-[#8c4a35]"
                     value={passwordChangeData.email || patientEmail}
                     onChange={(e) => setPasswordChangeData({ ...passwordChangeData, email: e.target.value })}
                     placeholder="Enter your email"
@@ -262,14 +262,14 @@ export default function PatientLoginPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="currentPassword" className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="currentPassword" className="block text-sm font-semibold text-[#4a2e1e] mb-2">
                     Current Password
                   </label>
                   <input
                     id="currentPassword"
                     type="password"
                     required
-                    className="w-full px-4 py-3 border border-orange-200/50 rounded-xl bg-white/70 backdrop-blur-sm text-amber-900 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                    className="w-full px-4 py-3 border border-[#ede0d0] rounded-xl bg-white/70 backdrop-blur-sm text-[#4a2e1e] focus:outline-none focus:ring-2 focus:ring-[#8c4a35]"
                     value={passwordChangeData.currentPassword}
                     onChange={(e) => setPasswordChangeData({ ...passwordChangeData, currentPassword: e.target.value })}
                     placeholder="Enter current password"
@@ -277,7 +277,7 @@ export default function PatientLoginPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="newPassword" className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="newPassword" className="block text-sm font-semibold text-[#4a2e1e] mb-2">
                     New Password
                   </label>
                   <input
@@ -285,14 +285,14 @@ export default function PatientLoginPage() {
                     type="password"
                     required
                     minLength={6}
-                    className="w-full px-4 py-3 border border-orange-200/50 rounded-xl bg-white/70 backdrop-blur-sm text-amber-900 focus:outline-none focus:ring-2 focus:ring-rose-400"
+                    className="w-full px-4 py-3 border border-[#ede0d0] rounded-xl bg-white/70 backdrop-blur-sm text-[#4a2e1e] focus:outline-none focus:ring-2 focus:ring-[#8c4a35]"
                     value={passwordChangeData.newPassword}
                     onChange={(e) => setPasswordChangeData({ ...passwordChangeData, newPassword: e.target.value })}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="confirmPassword" className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="confirmPassword" className="block text-sm font-semibold text-[#4a2e1e] mb-2">
                     Confirm New Password
                   </label>
                   <input
@@ -300,7 +300,7 @@ export default function PatientLoginPage() {
                     type="password"
                     required
                     minLength={6}
-                    className="w-full px-4 py-3 border border-orange-200/50 rounded-xl bg-white/70 backdrop-blur-sm text-amber-900 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                    className="w-full px-4 py-3 border border-[#ede0d0] rounded-xl bg-white/70 backdrop-blur-sm text-[#4a2e1e] focus:outline-none focus:ring-2 focus:ring-[#8c4a35]"
                     value={passwordChangeData.confirmPassword}
                     onChange={(e) => setPasswordChangeData({ ...passwordChangeData, confirmPassword: e.target.value })}
                   />
@@ -310,7 +310,7 @@ export default function PatientLoginPage() {
                   <button
                     type="submit"
                     disabled={passwordChangeLoading}
-                    className="flex-1 bg-gradient-to-r from-violet-500 to-violet-600 text-white px-6 py-3 rounded-xl hover:from-violet-600 hover:to-violet-700 transition-all shadow-lg hover:shadow-xl font-semibold disabled:opacity-50"
+                    className="flex-1 bg-[#8c4a35] hover:bg-[#723a28] text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-semibold disabled:opacity-50"
                   >
                     {passwordChangeLoading ? 'Changing...' : 'Change Password'}
                   </button>

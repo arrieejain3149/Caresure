@@ -310,14 +310,14 @@ export default function LoginPage() {
               </div>
 
               {passwordChangeSuccess && (
-                <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 px-4 py-3 rounded-xl mb-4 backdrop-blur-sm">
+                <div className="bg-[#f5ebe1] border border-[#ede0d0] text-[#4a2e1e] px-4 py-3 rounded-xl mb-4 backdrop-blur-sm">
                   Password changed successfully! You can now login with your new password.
                 </div>
               )}
 
               <form onSubmit={handleChangePassword} className="space-y-4">
                 {passwordChangeError && !passwordChangeSuccess && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl backdrop-blur-sm text-sm">
+                  <div className="bg-[#fbf0ea] border border-[#ede0d0] text-[#8c4a35] px-4 py-3 rounded-xl backdrop-blur-sm text-sm">
                     {passwordChangeError}
                   </div>
                 )}

@@ -146,21 +146,21 @@ export default function PatientDashboardPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'taken':
-        return 'bg-emerald-100 border-emerald-300 text-emerald-800';
+        return 'bg-[#f5ebe1] border-[#ede0d0] text-[#5a3e2b]';
       case 'missed':
-        return 'bg-orange-100 border-orange-300 text-orange-800';
+        return 'bg-[#fbf0ea] border-[#ede0d0] text-[#8c4a35]';
       case 'pending':
-        return 'bg-rose-100 border-rose-300 text-rose-800';
+        return 'bg-[#faf6f0] border-[#ede0d0] text-[#4a2e1e]';
       default:
-        return 'bg-gray-100 border-gray-300 text-gray-800';
+        return 'bg-white border-[#ede0d0] text-[#5a3e2b]';
     }
   };
 
   if (loading) {
     return (
       <PatientAuthGuard>
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
-          <div className="text-amber-800">Loading...</div>
+        <div className="min-h-screen flex items-center justify-center bg-[#faf6f0]">
+          <div className="text-[#8c4a35] font-medium">Loading...</div>
         </div>
       </PatientAuthGuard>
     );
@@ -168,12 +168,12 @@ export default function PatientDashboardPage() {
 
   return (
     <PatientAuthGuard>
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 relative overflow-hidden">
+      <div className="min-h-screen bg-[#faf6f0] relative overflow-hidden">
         {/* Blurred background decorations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-violet-300/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-300/30 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-rose-300/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#ede0d0] rounded-full blur-3xl opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e5d5c3] rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#f2e6d9] rounded-full blur-3xl opacity-50"></div>
         </div>
 
         {/* Navbar */}
@@ -205,7 +205,7 @@ export default function PatientDashboardPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8">
           {error && (
-            <div className="bg-red-100/70 border border-red-300/50 text-red-800 px-4 py-3 rounded-xl mb-6 backdrop-blur-sm">
+            <div className="bg-[#fbf0ea] border border-[#ede0d0] text-[#8c4a35] px-4 py-3 rounded-xl mb-6 backdrop-blur-sm">
               {error}
             </div>
           )}
@@ -213,29 +213,29 @@ export default function PatientDashboardPage() {
           {/* Stats Cards */}
           {stats && (
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-6 border border-emerald-200/50 hover:border-emerald-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <div className="text-3xl font-bold text-emerald-600 mb-2">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm p-6 border border-[#ede0d0] hover:border-[#8c4a35]/40 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                <div className="text-3xl font-bold text-[#5a3e2b] mb-2">
                   {stats.today.taken}
                 </div>
-                <div className="text-amber-800/70 font-medium">Taken Today</div>
+                <div className="text-[#7c6a5a] font-medium">Taken Today</div>
               </div>
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-6 border border-orange-200/50 hover:border-orange-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <div className="text-3xl font-bold text-orange-600 mb-2">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm p-6 border border-[#ede0d0] hover:border-[#8c4a35]/40 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                <div className="text-3xl font-bold text-[#8c4a35] mb-2">
                   {stats.today.missed}
                 </div>
-                <div className="text-amber-800/70 font-medium">Missed Today</div>
+                <div className="text-[#7c6a5a] font-medium">Missed Today</div>
               </div>
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-6 border border-rose-200/50 hover:border-rose-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <div className="text-3xl font-bold text-rose-600 mb-2">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm p-6 border border-[#ede0d0] hover:border-[#8c4a35]/40 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                <div className="text-3xl font-bold text-[#4a2e1e] mb-2">
                   {stats.today.pending}
                 </div>
-                <div className="text-amber-800/70 font-medium">Pending</div>
+                <div className="text-[#7c6a5a] font-medium">Pending</div>
               </div>
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-6 border border-violet-200/50 hover:border-violet-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <div className="text-3xl font-bold text-violet-600 mb-2">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm p-6 border border-[#ede0d0] hover:border-[#8c4a35]/40 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                <div className="text-3xl font-bold text-[#8c4a35] mb-2">
                   {stats.adherence7Days}%
                 </div>
-                <div className="text-amber-800/70 font-medium">7-Day Adherence</div>
+                <div className="text-[#7c6a5a] font-medium">7-Day Adherence</div>
               </div>
             </div>
           )}
@@ -243,31 +243,31 @@ export default function PatientDashboardPage() {
           {/* Quick Info Cards */}
           {patient && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-violet-200/50 p-6">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="text-2xl">👤</div>
                   <div>
-                    <div className="text-sm text-amber-700/70">Patient Info</div>
-                    <div className="font-semibold text-amber-900">{patient.name}</div>
-                    <div className="text-xs text-amber-700/60">{patient.age} years • {patient.gender}</div>
+                    <div className="text-sm text-[#7c6a5a]">Patient Info</div>
+                    <div className="font-semibold text-[#4a2e1e]">{patient.name}</div>
+                    <div className="text-xs text-[#8c7464]">{patient.age} years • {patient.gender}</div>
                   </div>
                 </div>
               </div>
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-orange-200/50 p-6">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="text-2xl">💊</div>
                   <div>
-                    <div className="text-sm text-amber-700/70">Total Medications</div>
-                    <div className="font-semibold text-amber-900 text-xl">{stats?.totalMedications || 0}</div>
+                    <div className="text-sm text-[#7c6a5a]">Total Medications</div>
+                    <div className="font-semibold text-[#4a2e1e] text-xl">{stats?.totalMedications || 0}</div>
                   </div>
                 </div>
               </div>
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-rose-200/50 p-6">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="text-2xl">📊</div>
                   <div>
-                    <div className="text-sm text-amber-700/70">Overall Adherence</div>
-                    <div className="font-semibold text-amber-900 text-xl">{stats?.adherence7Days || 0}%</div>
+                    <div className="text-sm text-[#7c6a5a]">Overall Adherence</div>
+                    <div className="font-semibold text-[#4a2e1e] text-xl">{stats?.adherence7Days || 0}%</div>
                   </div>
                 </div>
               </div>
@@ -276,10 +276,10 @@ export default function PatientDashboardPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Today's Schedule */}
-            <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-orange-200/50 p-6">
-              <h2 className="text-2xl font-bold text-amber-900 mb-6">Today's Schedule</h2>
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
+              <h2 className="text-2xl font-bold text-[#4a2e1e] mb-6">Today's Schedule</h2>
               {todayDoses.length === 0 ? (
-                <div className="text-center py-12 text-amber-700/70">
+                <div className="text-center py-12 text-[#7c6a5a]">
                   <div className="text-4xl mb-4">📅</div>
                   <p className="text-lg">No medications scheduled for today</p>
                 </div>
@@ -292,19 +292,19 @@ export default function PatientDashboardPage() {
                     >
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <h3 className="font-semibold text-lg">{dose.medication_name}</h3>
-                          <p className="text-sm opacity-80">
+                          <h3 className="font-semibold text-lg text-[#4a2e1e]">{dose.medication_name}</h3>
+                          <p className="text-sm text-[#6e5d4f]">
                             {dose.strength} • {dose.dose_per_intake}
                           </p>
-                          <p className="text-sm opacity-70 mt-1">
+                          <p className="text-sm text-[#8c7464] mt-1">
                             {formatTime(dose.scheduled_time)} • {dose.time_slot}
                             {dose.food_rule && ` • ${dose.food_rule}`}
                           </p>
                         </div>
                         <span className={`px-3 py-1 rounded-lg text-xs font-semibold capitalize ${
-                          dose.status === 'taken' ? 'bg-emerald-200 text-emerald-900' :
-                          dose.status === 'missed' ? 'bg-orange-200 text-orange-900' :
-                          'bg-rose-200 text-rose-900'
+                          dose.status === 'taken' ? 'bg-[#ede0d0] text-[#5a3e2b]' :
+                          dose.status === 'missed' ? 'bg-[#fbf0ea] text-[#8c4a35]' :
+                          'bg-[#f5ebe1] text-[#6e4e37]'
                         }`}>
                           {dose.status}
                         </span>
@@ -313,13 +313,13 @@ export default function PatientDashboardPage() {
                         <div className="flex gap-2 mt-3">
                           <button
                             onClick={() => handleMarkTaken(dose.id)}
-                            className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg hover:shadow-xl"
+                            className="flex-1 bg-[#8c4a35] hover:bg-[#723a28] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm hover:shadow-md"
                           >
                             Mark as Taken
                           </button>
                           <button
                             onClick={() => handleMarkMissed(dose.id)}
-                            className="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg hover:shadow-xl"
+                            className="flex-1 bg-[#ede0d0] hover:bg-[#dfcebc] text-[#5a3e2b] px-4 py-2 rounded-lg text-sm font-semibold transition-all border border-[#d9c5b2]"
                           >
                             Mark as Missed
                           </button>
@@ -332,10 +332,10 @@ export default function PatientDashboardPage() {
             </div>
 
             {/* My Medications */}
-            <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-violet-200/50 p-6">
-              <h2 className="text-2xl font-bold text-amber-900 mb-6">My Medications</h2>
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
+              <h2 className="text-2xl font-bold text-[#4a2e1e] mb-6">My Medications</h2>
               {medications.length === 0 ? (
-                <div className="text-center py-12 text-amber-700/70">
+                <div className="text-center py-12 text-[#7c6a5a]">
                   <div className="text-4xl mb-4">💊</div>
                   <p className="text-lg">No medications added yet</p>
                 </div>
@@ -344,17 +344,17 @@ export default function PatientDashboardPage() {
                   {medications.map((med) => (
                     <div
                       key={med.id}
-                      className="border border-orange-200/50 rounded-xl p-4 bg-white/50 backdrop-blur-sm hover:bg-white/70 hover:border-violet-400 hover:shadow-lg transition-all"
+                      className="border border-[#ede0d0] rounded-xl p-4 bg-white/60 backdrop-blur-sm hover:bg-white hover:border-[#8c4a35]/40 hover:shadow-md transition-all"
                     >
-                      <h3 className="font-semibold text-amber-900 text-lg">{med.name}</h3>
-                      <p className="text-sm text-amber-800/70 mt-1">
+                      <h3 className="font-semibold text-[#4a2e1e] text-lg">{med.name}</h3>
+                      <p className="text-sm text-[#7c6a5a] mt-1">
                         {med.strength} • {med.dose_per_intake}
                       </p>
-                      <p className="text-sm text-amber-700/60 mt-1">
+                      <p className="text-sm text-[#8c7464] mt-1">
                         Frequency: {med.frequency}
                       </p>
                       {med.time_slots && (
-                        <p className="text-sm text-amber-700/60 mt-1">
+                        <p className="text-sm text-[#8c7464] mt-1">
                           Times: {med.time_slots}
                         </p>
                       )}
@@ -368,22 +368,22 @@ export default function PatientDashboardPage() {
           {/* Additional Sections */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Upcoming Doses (Next 3 Days) */}
-            <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-violet-200/50 p-6">
-              <h2 className="text-xl font-bold text-amber-900 mb-4">Upcoming Doses</h2>
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
+              <h2 className="text-xl font-bold text-[#4a2e1e] mb-4">Upcoming Doses</h2>
               <div className="space-y-3">
                 {todayDoses
                   .filter(dose => dose.status === 'pending')
                   .slice(0, 3)
                   .map((dose) => (
-                    <div key={dose.id} className="bg-white/50 backdrop-blur-sm p-3 rounded-xl border border-violet-200/50">
-                      <div className="font-semibold text-amber-900 text-sm">{dose.medication_name}</div>
-                      <div className="text-xs text-amber-700/70 mt-1">
+                    <div key={dose.id} className="bg-white/60 backdrop-blur-sm p-3 rounded-xl border border-[#ede0d0]">
+                      <div className="font-semibold text-[#4a2e1e] text-sm">{dose.medication_name}</div>
+                      <div className="text-xs text-[#7c6a5a] mt-1">
                         {formatTime(dose.scheduled_time)} • {dose.time_slot}
                       </div>
                     </div>
                   ))}
                 {todayDoses.filter(dose => dose.status === 'pending').length === 0 && (
-                  <div className="text-center py-6 text-amber-700/70 text-sm">
+                  <div className="text-center py-6 text-[#7c6a5a] text-sm">
                     <div className="text-2xl mb-2">✅</div>
                     <p>All doses for today are completed!</p>
                   </div>
@@ -393,45 +393,45 @@ export default function PatientDashboardPage() {
 
             {/* Profile Information */}
             {patient && (
-              <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-rose-200/50 p-6">
-                <h2 className="text-xl font-bold text-amber-900 mb-4">My Profile</h2>
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
+                <h2 className="text-xl font-bold text-[#4a2e1e] mb-4">My Profile</h2>
                 <div className="space-y-3">
                   <div>
-                    <div className="text-xs text-amber-700/70">Name</div>
-                    <div className="font-semibold text-amber-900">{patient.name}</div>
+                    <div className="text-xs text-[#7c6a5a]">Name</div>
+                    <div className="font-semibold text-[#4a2e1e]">{patient.name}</div>
                   </div>
                   <div>
-                    <div className="text-xs text-amber-700/70">Age</div>
-                    <div className="font-semibold text-amber-900">{patient.age} years</div>
+                    <div className="text-xs text-[#7c6a5a]">Age</div>
+                    <div className="font-semibold text-[#4a2e1e]">{patient.age} years</div>
                   </div>
                   <div>
-                    <div className="text-xs text-amber-700/70">Gender</div>
-                    <div className="font-semibold text-amber-900 capitalize">{patient.gender}</div>
+                    <div className="text-xs text-[#7c6a5a]">Gender</div>
+                    <div className="font-semibold text-[#4a2e1e] capitalize">{patient.gender}</div>
                   </div>
                   {patient.relationship && (
                     <div>
-                      <div className="text-xs text-amber-700/70">Relationship</div>
-                      <div className="font-semibold text-amber-900">{patient.relationship}</div>
+                      <div className="text-xs text-[#7c6a5a]">Relationship</div>
+                      <div className="font-semibold text-[#4a2e1e]">{patient.relationship}</div>
                     </div>
                   )}
                   {patient.allergies && (
                     <div>
-                      <div className="text-xs text-amber-700/70">Allergies</div>
-                      <div className="font-semibold text-amber-900 text-sm">{patient.allergies}</div>
+                      <div className="text-xs text-[#7c6a5a]">Allergies</div>
+                      <div className="font-semibold text-[#4a2e1e] text-sm">{patient.allergies}</div>
                     </div>
                   )}
                   {patient.emergency_contact && (
                     <div>
-                      <div className="text-xs text-amber-700/70">Emergency Contact</div>
-                      <div className="font-semibold text-amber-900 text-sm">{patient.emergency_contact}</div>
+                      <div className="text-xs text-[#7c6a5a]">Emergency Contact</div>
+                      <div className="font-semibold text-[#4a2e1e] text-sm">{patient.emergency_contact}</div>
                     </div>
                   )}
                   {patient.doctor_name && (
                     <div>
-                      <div className="text-xs text-amber-700/70">Doctor</div>
-                      <div className="font-semibold text-amber-900 text-sm">{patient.doctor_name}</div>
+                      <div className="text-xs text-[#7c6a5a]">Doctor</div>
+                      <div className="font-semibold text-[#4a2e1e] text-sm">{patient.doctor_name}</div>
                       {patient.doctor_contact && (
-                        <div className="text-xs text-amber-700/60">{patient.doctor_contact}</div>
+                        <div className="text-xs text-[#8c7464]">{patient.doctor_contact}</div>
                       )}
                     </div>
                   )}
@@ -440,8 +440,8 @@ export default function PatientDashboardPage() {
             )}
 
             {/* Quick Actions */}
-            <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-emerald-200/50 p-6">
-              <h2 className="text-xl font-bold text-amber-900 mb-4">Quick Actions</h2>
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
+              <h2 className="text-xl font-bold text-[#4a2e1e] mb-4">Quick Actions</h2>
               <div className="space-y-3">
                 <button
                   onClick={() => {
@@ -453,11 +453,11 @@ export default function PatientDashboardPage() {
                       alert('No pending doses to mark as taken');
                     }
                   }}
-                  className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl font-semibold text-sm"
+                  className="w-full bg-[#8c4a35] hover:bg-[#723a28] text-white px-4 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-semibold text-sm"
                 >
                   Mark Next Dose as Taken
                 </button>
-                <div className="text-xs text-amber-700/70 text-center pt-2">
+                <div className="text-xs text-[#7c6a5a] text-center pt-2">
                   {todayDoses.filter(d => d.status === 'pending').length} pending dose(s) remaining
                 </div>
               </div>
@@ -465,8 +465,8 @@ export default function PatientDashboardPage() {
           </div>
 
           {/* Recent Activity / Medication History */}
-          <div className="mt-8 bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-orange-200/50 p-6">
-            <h2 className="text-2xl font-bold text-amber-900 mb-6">Recent Activity</h2>
+          <div className="mt-8 bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
+            <h2 className="text-2xl font-bold text-[#4a2e1e] mb-6">Recent Activity</h2>
             <div className="space-y-3">
               {todayDoses
                 .filter(dose => dose.status === 'taken' || dose.status === 'missed')
@@ -476,32 +476,32 @@ export default function PatientDashboardPage() {
                     key={dose.id}
                     className={`flex items-center justify-between p-4 rounded-xl border ${
                       dose.status === 'taken'
-                        ? 'bg-emerald-50/50 border-emerald-200/50'
-                        : 'bg-orange-50/50 border-orange-200/50'
+                        ? 'bg-[#f5ebe1] border-[#ede0d0]'
+                        : 'bg-[#fbf0ea] border-[#ede0d0]'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`text-2xl ${dose.status === 'taken' ? 'text-emerald-600' : 'text-orange-600'}`}>
+                      <div className={`text-2xl ${dose.status === 'taken' ? 'text-[#5a3e2b]' : 'text-[#8c4a35]'}`}>
                         {dose.status === 'taken' ? '✅' : '⚠️'}
                       </div>
                       <div>
-                        <div className="font-semibold text-amber-900">{dose.medication_name}</div>
-                        <div className="text-sm text-amber-700/70">
+                        <div className="font-semibold text-[#4a2e1e]">{dose.medication_name}</div>
+                        <div className="text-sm text-[#7c6a5a]">
                           {formatTime(dose.scheduled_time)} • {dose.status === 'taken' ? 'Taken' : 'Missed'}
                         </div>
                       </div>
                     </div>
                     <span className={`px-3 py-1 rounded-lg text-xs font-semibold ${
                       dose.status === 'taken'
-                        ? 'bg-emerald-200 text-emerald-900'
-                        : 'bg-orange-200 text-orange-900'
+                        ? 'bg-[#ede0d0] text-[#5a3e2b]'
+                        : 'bg-[#fbf0ea] text-[#8c4a35]'
                     }`}>
                       {dose.status === 'taken' ? 'Completed' : 'Missed'}
                     </span>
                   </div>
                 ))}
               {todayDoses.filter(dose => dose.status === 'taken' || dose.status === 'missed').length === 0 && (
-                <div className="text-center py-8 text-amber-700/70">
+                <div className="text-center py-8 text-[#7c6a5a]">
                   <div className="text-3xl mb-2">📝</div>
                   <p>No activity recorded yet today</p>
                 </div>

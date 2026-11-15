@@ -76,8 +76,8 @@ export default function PatientAuthGuard({ children }: PatientAuthGuardProps) {
 
   if (isChecking || !isAuth) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
-        <div className="text-amber-800">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-[#faf6f0]">
+        <div className="text-[#8c4a35] font-medium">Loading...</div>
       </div>
     );
   }

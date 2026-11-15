@@ -52,8 +52,8 @@ export default function SettingsPage() {
   if (loading) {
     return (
       <AuthGuard>
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
-          <div className="text-amber-800">Loading...</div>
+        <div className="min-h-screen flex items-center justify-center bg-[#faf6f0]">
+          <div className="text-[#8c4a35] font-medium">Loading...</div>
         </div>
       </AuthGuard>
     );
@@ -61,25 +61,25 @@ export default function SettingsPage() {
 
   return (
     <AuthGuard>
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 py-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[#faf6f0] py-8 relative overflow-hidden">
       {/* Blurred background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-violet-300/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-300/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-rose-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ede0d0] rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e5d5c3] rounded-full blur-3xl opacity-40"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#f2e6d9] rounded-full blur-3xl opacity-50"></div>
       </div>
       
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 via-rose-500 to-violet-600 bg-clip-text text-transparent mb-8 drop-shadow-sm">
+        <h1 className="text-4xl font-bold text-[#4a2e1e] mb-8 drop-shadow-sm">
           Settings
         </h1>
 
-        <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-orange-200/50 p-6">
-          <h2 className="text-xl font-semibold text-amber-900 mb-6">Account Settings</h2>
+        <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-6">
+          <h2 className="text-xl font-semibold text-[#4a2e1e] mb-6">Account Settings</h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-amber-800">
+              <label htmlFor="email" className="block text-sm font-medium text-[#4a2e1e]">
                 Email
               </label>
               <input
@@ -87,46 +87,46 @@ export default function SettingsPage() {
                 id="email"
                 disabled
                 value={profile?.email || ''}
-                className="mt-1 block w-full px-3 py-2 border border-orange-200/50 rounded-md bg-white/50 backdrop-blur-sm text-amber-700/60"
+                className="mt-1 block w-full px-3 py-2 border border-[#ede0d0] rounded-md bg-[#faf6f0]/60 text-[#7c6a5a]"
               />
-              <p className="mt-1 text-sm text-amber-700/70">Email cannot be changed</p>
+              <p className="mt-1 text-sm text-[#7c6a5a]">Email cannot be changed</p>
             </div>
 
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-amber-800">
+              <label htmlFor="name" className="block text-sm font-medium text-[#4a2e1e]">
                 Full Name
               </label>
               <input
                 type="text"
                 id="name"
                 required
-                className="mt-1 block w-full px-3 py-2 border border-orange-200/50 rounded-md shadow-sm bg-white/70 backdrop-blur-sm text-amber-900 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-400"
+                className="mt-1 block w-full px-3 py-2 border border-[#ede0d0] rounded-md shadow-sm bg-white/70 backdrop-blur-sm text-[#4a2e1e] focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35]"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-amber-800">
+              <label htmlFor="phone" className="block text-sm font-medium text-[#4a2e1e]">
                 Phone Number
               </label>
               <input
                 type="tel"
                 id="phone"
-                className="mt-1 block w-full px-3 py-2 border border-orange-200/50 rounded-md shadow-sm bg-white/70 backdrop-blur-sm text-amber-900 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-400"
+                className="mt-1 block w-full px-3 py-2 border border-[#ede0d0] rounded-md shadow-sm bg-white/70 backdrop-blur-sm text-[#4a2e1e] focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35]"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
             </div>
 
             <div>
-              <label htmlFor="emergency_contact" className="block text-sm font-medium text-amber-800">
+              <label htmlFor="emergency_contact" className="block text-sm font-medium text-[#4a2e1e]">
                 Emergency Contact
               </label>
               <input
                 type="text"
                 id="emergency_contact"
-                className="mt-1 block w-full px-3 py-2 border border-orange-200/50 rounded-md shadow-sm bg-white/70 backdrop-blur-sm text-amber-900 placeholder-amber-400/50 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                className="mt-1 block w-full px-3 py-2 border border-[#ede0d0] rounded-md shadow-sm bg-white/70 backdrop-blur-sm text-[#4a2e1e] placeholder-[#a89887] focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35]"
                 placeholder="Name and phone number"
                 value={formData.emergency_contact}
                 onChange={(e) => setFormData({ ...formData, emergency_contact: e.target.value })}
@@ -137,7 +137,7 @@ export default function SettingsPage() {
               <button
                 type="submit"
                 disabled={saving}
-                className="bg-gradient-to-r from-violet-500 to-violet-600 text-white px-6 py-2 rounded-lg hover:from-violet-600 hover:to-violet-700 disabled:opacity-50 transition-all shadow-lg font-medium backdrop-blur-sm"
+                className="bg-[#8c4a35] hover:bg-[#723a28] text-white px-6 py-2 rounded-lg disabled:opacity-50 transition-all shadow-sm hover:shadow-md font-medium backdrop-blur-sm"
               >
                 {saving ? 'Saving...' : 'Save Changes'}
               </button>

@@ -55,8 +55,8 @@ export default function AuthGuard({ children }: AuthGuardProps) {
   // Don't render anything until auth is checked
   if (isChecking || !isAuth) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-900">
-        <div className="text-slate-300">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-[#faf6f0]">
+        <div className="text-[#8c4a35] font-medium">Loading...</div>
       </div>
     );
   }

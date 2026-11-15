@@ -34,8 +34,8 @@ export default function AdminGuard({ children }: AdminGuardProps) {
 
   if (isChecking || !isAuthorized) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-900">
-        <div className="text-slate-300">Checking admin access...</div>
+      <div className="min-h-screen flex items-center justify-center bg-[#faf6f0]">
+        <div className="text-[#8c4a35] font-medium">Checking admin access...</div>
       </div>
     );
   }
