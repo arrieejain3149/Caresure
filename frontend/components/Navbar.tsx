@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { removeToken } from '@/lib/auth';
 import { isAdmin } from '@/lib/admin';
+import CareSureLogo from './CareSureLogo';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -44,21 +44,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white/80 backdrop-blur-xl shadow-md border-b border-orange-200/60 sticky top-0 z-50">
+    <nav className="bg-white/90 backdrop-blur-xl shadow-sm border-b border-[#e8dccb] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo: Unified CareSure Brand Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/dashboard" className="flex items-center gap-2 sm:gap-3">
-              <Image
-                src="/logo-dark-transparent.png"
-                alt="CareSure Logo"
-                width={150}
-                height={45}
-                className="object-contain h-8 sm:h-10 w-auto"
-                priority
-              />
-            </Link>
+            <CareSureLogo variant="dark" size="sm" href="/dashboard" />
           </div>
 
           {/* Desktop Navigation */}
@@ -69,8 +60,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`inline-flex items-center px-2 lg:px-3 pt-1 border-b-2 text-sm font-semibold transition-all duration-300 min-h-[44px] ${
                   link.active
-                    ? 'border-orange-500 text-orange-600 shadow-sm'
-                    : 'border-transparent text-amber-800/80 hover:text-orange-600 hover:border-orange-300/50'
+                    ? 'border-[#8c4a35] text-[#8c4a35] shadow-sm'
+                    : 'border-transparent text-[#5c4d43] hover:text-[#8c4a35] hover:border-[#8c4a35]/40'
                 }`}
               >
                 {link.label}
@@ -82,7 +73,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <button
               onClick={handleLogout}
-              className="text-amber-800/80 hover:text-orange-600 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-orange-50/70 hover:shadow-sm border border-transparent hover:border-orange-200/50 min-h-[44px]"
+              className="text-[#5c4d43] hover:text-[#8c4a35] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#faf6f0] border border-transparent hover:border-[#e8dccb] min-h-[44px]"
             >
               Logout
             </button>
@@ -92,7 +83,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-amber-800/80 hover:text-orange-600 hover:bg-orange-50/70 focus:outline-none focus:ring-2 focus:ring-orange-500 min-w-[44px] min-h-[44px]"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-[#5c4d43] hover:text-[#8c4a35] hover:bg-[#faf6f0] focus:outline-none focus:ring-2 focus:ring-[#8c4a35] min-w-[44px] min-h-[44px]"
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -110,31 +101,28 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-orange-200/60 bg-white/95 backdrop-blur-xl">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`block px-3 py-3 rounded-lg text-base font-semibold transition-all duration-300 min-h-[44px] flex items-center ${
-                  link.active
-                    ? 'bg-orange-50 text-orange-600 border-l-4 border-orange-500'
-                    : 'text-amber-800/80 hover:bg-orange-50/50 hover:text-orange-600'
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <button
-              onClick={handleLogout}
-              className="w-full text-left px-3 py-3 rounded-lg text-base font-semibold text-amber-800/80 hover:bg-orange-50/50 hover:text-orange-600 transition-all duration-300 min-h-[44px] flex items-center"
+        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-[#e8dccb] px-4 pt-2 pb-4 space-y-1 shadow-lg">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                link.active
+                  ? 'bg-[#f5ebe1] text-[#8c4a35] font-semibold'
+                  : 'text-[#5c4d43] hover:bg-[#faf6f0] hover:text-[#8c4a35]'
+              }`}
             >
-              Logout
-            </button>
-          </div>
+              {link.label}
+            </Link>
+          ))}
+          <button
+            onClick={handleLogout}
+            className="w-full text-left block px-3 py-2 rounded-md text-base font-medium text-[#8c4a35] hover:bg-[#faf6f0] transition-colors"
+          >
+            Logout
+          </button>
         </div>
       )}
     </nav>

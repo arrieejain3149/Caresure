@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { patientAuthAPI } from '@/lib/api';
 import { setToken } from '@/lib/auth';
+import CareSureLogo from '@/components/CareSureLogo';
 
 export default function PatientLoginPage() {
   const router = useRouter();
@@ -112,35 +113,33 @@ export default function PatientLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-violet-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-rose-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#faf6f0] via-[#f5ebe1] to-[#ede0d0] py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Top Header / Navbar: Consistent CareSure Brand Logo */}
+      <div className="absolute top-5 left-5 sm:top-7 sm:left-8 lg:left-12 z-30">
+        <CareSureLogo variant="dark" size="md" href="/" />
+      </div>
+
+      {/* Background decoration: Soft Warm Beige & Brown Ambient Glow */}
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#ede0d0] rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#d9c5b2] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#8c4a35]/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="max-w-md w-full space-y-6 sm:space-y-8 relative z-10">
         <div className="text-center">
-          <div className="flex justify-center mb-4 sm:mb-6">
-            <img 
-              src="/logo.png" 
-              alt="CareSure Logo" 
-              className="h-16 sm:h-20 w-auto drop-shadow-lg"
-            />
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-orange-600 via-rose-500 to-violet-600 bg-clip-text text-transparent drop-shadow-lg">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#4a2e1e] drop-shadow-sm">
             Patient Login
           </h2>
-          <p className="mt-4 text-center text-sm text-amber-800/70">
+          <p className="mt-4 text-center text-sm text-[#735d4e]">
             Sign in to view your medication schedule
           </p>
-          <p className="mt-2 text-center text-xs text-amber-700/60">
+          <p className="mt-2 text-center text-xs text-[#8c7464]">
             Need credentials? Contact your caregiver who registered you.
           </p>
         </div>
         
-        <form className="mt-8 space-y-6 bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-orange-200/50 p-6" onSubmit={handleLogin}>
+        <form className="mt-8 space-y-6 bg-white/85 backdrop-blur-xl rounded-2xl shadow-xl border border-[#e8dccb] p-6" onSubmit={handleLogin}>
           {error && (
             <div className="bg-red-100/70 border border-red-300/50 text-red-800 px-4 py-3 rounded-xl backdrop-blur-sm">
               {error}
@@ -149,7 +148,7 @@ export default function PatientLoginPage() {
           
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-amber-900 mb-2">
+              <label htmlFor="email" className="block text-sm font-semibold text-[#4a2e1e] mb-2">
                 Email address
               </label>
               <input
@@ -158,14 +157,14 @@ export default function PatientLoginPage() {
                 type="email"
                 autoComplete="email"
                 required
-                className="appearance-none relative block w-full px-4 py-3.5 sm:py-3 border border-orange-200/50 placeholder-amber-400/50 text-amber-900 rounded-xl bg-white/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-400 transition-all shadow-inner text-base min-h-[44px] touch-manipulation"
+                className="appearance-none relative block w-full px-4 py-3.5 sm:py-3 border border-[#e0d3c1] placeholder-[#a89887] text-[#3e2c22] rounded-xl bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35] transition-all shadow-inner text-base min-h-[44px] touch-manipulation"
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
             </div>
             <div>
-              <label htmlFor="password" className="block text-sm font-semibold text-amber-900 mb-2">
+              <label htmlFor="password" className="block text-sm font-semibold text-[#4a2e1e] mb-2">
                 Password
               </label>
               <input
@@ -174,7 +173,7 @@ export default function PatientLoginPage() {
                 type="password"
                 autoComplete="current-password"
                 required
-                className="appearance-none relative block w-full px-4 py-3 border border-orange-200/50 placeholder-amber-400/50 text-amber-900 rounded-xl bg-white/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all shadow-inner"
+                className="appearance-none relative block w-full px-4 py-3 border border-[#e0d3c1] placeholder-[#a89887] text-[#3e2c22] rounded-xl bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35] transition-all shadow-inner"
                 placeholder="Enter your password"
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -189,7 +188,7 @@ export default function PatientLoginPage() {
                 setShowPasswordChange(true);
                 setPasswordChangeData({ ...passwordChangeData, email: formData.email, currentPassword: formData.password });
               }}
-              className="text-sm text-violet-600 hover:text-violet-700 transition-colors font-medium"
+              className="text-sm text-[#8c4a35] hover:text-[#5a2e1e] transition-colors font-medium underline decoration-[#8c4a35]/50 underline-offset-4"
             >
               Change Password?
             </button>
@@ -199,7 +198,7 @@ export default function PatientLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-3.5 sm:py-3 px-4 border border-transparent text-base sm:text-sm font-semibold rounded-xl text-white bg-gradient-to-r from-orange-500 via-rose-500 to-violet-500 hover:from-orange-400 hover:via-rose-400 hover:to-violet-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-400 disabled:opacity-50 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px] touch-manipulation active:scale-95"
+              className="group relative w-full flex justify-center py-3.5 sm:py-3 px-4 border border-transparent text-base sm:text-sm font-semibold rounded-xl text-white bg-[#8c4a35] hover:bg-[#783e2c] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8c4a35] disabled:opacity-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#8c4a35]/30 min-h-[44px] touch-manipulation active:scale-95"
             >
               {loading ? (
                 <span className="flex items-center">

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { authAPI } from '@/lib/api';
 import { setToken } from '@/lib/auth';
+import CareSureLogo from '@/components/CareSureLogo';
 
 export default function SignupPage() {
   const router = useRouter();
@@ -34,33 +35,31 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50/30 to-violet-50/30 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Beautiful Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000"></div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#faf6f0] via-[#f5ebe1] to-[#ede0d0] py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Top Header / Navbar: Consistent CareSure Brand Logo */}
+      <div className="absolute top-5 left-5 sm:top-7 sm:left-8 lg:left-12 z-30">
+        <CareSureLogo variant="dark" size="md" href="/" />
       </div>
 
-      {/* Gradient mesh overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/20 via-transparent to-violet-50/20"></div>
+      {/* Background Decorations: Soft Beige & Warm Brown Blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ede0d0] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#d9c5b2] rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#f0e4d7] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-4000"></div>
+      </div>
+
+      {/* Subtle overlay */}
+      <div className="absolute inset-0 bg-[#faf6f0]/40 pointer-events-none"></div>
 
       <div className="max-w-md w-full space-y-6 sm:space-y-8 relative z-10">
-        <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-white/20">
+        <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-8 border border-[#e8dccb]">
           <div className="text-center mb-6 sm:mb-8">
-            <div className="flex justify-center mb-4 sm:mb-6">
-              <img 
-                src="/logo-dark-transparent.png" 
-                alt="CareSure Logo" 
-                className="h-16 sm:h-20 w-auto drop-shadow-lg"
-              />
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-orange-500 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-              Create your CareSure account
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#4a2e1e]">
+              Create your <span className="text-[#8c4a35]">CareSure</span> account
             </h2>
-            <p className="mt-4 text-center text-sm text-gray-600">
+            <p className="mt-4 text-center text-sm text-[#735d4e]">
               Or{' '}
-              <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500 transition-colors">
+              <Link href="/login" className="font-medium text-[#8c4a35] hover:text-[#5a2e1e] transition-colors underline decoration-[#8c4a35] underline-offset-4">
                 sign in to your existing account
               </Link>
             </p>
@@ -75,7 +74,7 @@ export default function SignupPage() {
             
             <div className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-[#4a2e1e] mb-2">
                   Full Name
                 </label>
                 <input
@@ -83,7 +82,7 @@ export default function SignupPage() {
                   name="name"
                   type="text"
                   required
-                  className="appearance-none relative block w-full px-4 py-3.5 sm:py-3 border-2 border-gray-200 placeholder-gray-400 text-gray-900 rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-all shadow-sm hover:shadow-md text-base min-h-[44px] touch-manipulation"
+                  className="appearance-none relative block w-full px-4 py-3.5 sm:py-3 border-2 border-[#e0d3c1] placeholder-[#a89887] text-[#3e2c22] rounded-lg bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35] transition-all shadow-sm hover:shadow-md text-base min-h-[44px] touch-manipulation"
                   placeholder="John Doe"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -91,7 +90,7 @@ export default function SignupPage() {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-[#4a2e1e] mb-2">
                   Email address
                 </label>
                 <input
@@ -100,7 +99,7 @@ export default function SignupPage() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-200 placeholder-gray-400 text-gray-900 rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all shadow-sm hover:shadow-md"
+                  className="appearance-none relative block w-full px-4 py-3 border-2 border-[#e0d3c1] placeholder-[#a89887] text-[#3e2c22] rounded-lg bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35] transition-all shadow-sm hover:shadow-md"
                   placeholder="email@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -108,14 +107,14 @@ export default function SignupPage() {
               </div>
               
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone <span className="text-gray-400 text-xs">(Optional)</span>
+                <label htmlFor="phone" className="block text-sm font-medium text-[#4a2e1e] mb-2">
+                  Phone <span className="text-[#a89887] text-xs">(Optional)</span>
                 </label>
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
-                  className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-200 placeholder-gray-400 text-gray-900 rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-400 transition-all shadow-sm hover:shadow-md"
+                  className="appearance-none relative block w-full px-4 py-3 border-2 border-[#e0d3c1] placeholder-[#a89887] text-[#3e2c22] rounded-lg bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35] transition-all shadow-sm hover:shadow-md"
                   placeholder="+1234567890"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -123,7 +122,7 @@ export default function SignupPage() {
               </div>
               
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="password" className="block text-sm font-medium text-[#4a2e1e] mb-2">
                   Password
                 </label>
                 <input
@@ -133,7 +132,7 @@ export default function SignupPage() {
                   autoComplete="new-password"
                   required
                   minLength={6}
-                  className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-200 placeholder-gray-400 text-gray-900 rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all shadow-sm hover:shadow-md"
+                  className="appearance-none relative block w-full px-4 py-3 border-2 border-[#e0d3c1] placeholder-[#a89887] text-[#3e2c22] rounded-lg bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#8c4a35] focus:border-[#8c4a35] transition-all shadow-sm hover:shadow-md"
                   placeholder="Minimum 6 characters"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -145,7 +144,7 @@ export default function SignupPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full flex justify-center py-3.5 sm:py-3 px-4 border border-transparent text-base sm:text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-orange-500 via-blue-500 to-violet-500 hover:from-orange-600 hover:via-blue-600 hover:to-violet-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/50 transform hover:scale-[1.02] min-h-[44px] touch-manipulation active:scale-95"
+                className="group relative w-full flex justify-center py-3.5 sm:py-3 px-4 border border-transparent text-base sm:text-sm font-semibold rounded-lg text-white bg-[#8c4a35] hover:bg-[#783e2c] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8c4a35] disabled:opacity-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#8c4a35]/40 transform hover:scale-[1.02] min-h-[44px] touch-manipulation active:scale-95"
               >
                 {loading ? (
                   <span className="flex items-center">

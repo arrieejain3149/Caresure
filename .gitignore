@@ -29,3 +29,6 @@ Thumbs.db
 
 # Turbopack
 .turbo/
+
+# Internal scratch scripts
+scratch/

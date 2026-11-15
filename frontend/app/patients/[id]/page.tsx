@@ -3,10 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { patientAPI, medicationAPI, reminderAPI, deviceAPI, reportAPI } from '@/lib/api';
 import AuthGuard from '@/components/AuthGuard';
-import { removeToken } from '@/lib/auth';
 
 interface Patient {
   id: number;
@@ -72,11 +70,6 @@ export default function PatientDetailPage() {
     );
   }
 
-  const handleLogout = () => {
-    removeToken();
-    router.push('/login');
-  };
-
   return (
     <AuthGuard>
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 relative overflow-hidden">
@@ -86,64 +79,6 @@ export default function PatientDetailPage() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-300/30 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-rose-300/20 rounded-full blur-3xl"></div>
       </div>
-
-      {/* Navbar */}
-      <nav className="bg-white/80 backdrop-blur-xl shadow-md border-b border-orange-200/60 sticky top-0 z-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <Link href="/dashboard" className="flex items-center gap-3">
-                  <Image
-                    src="/logo.png"
-                    alt="CareSure Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain"
-                  />
-                  <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 via-rose-500 to-violet-600 bg-clip-text text-transparent drop-shadow-sm hover:from-orange-500 hover:via-rose-400 hover:to-violet-500 transition-all duration-300">
-                    CareSure
-                  </span>
-                </Link>
-              </div>
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                <Link
-                  href="/dashboard"
-                  className="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300 border-transparent text-amber-800/80 hover:text-orange-600 hover:border-orange-300/50"
-                >
-                  Dashboard
-                </Link>
-                <Link
-                  href="/patients"
-                  className="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300 border-rose-500 text-rose-600 shadow-sm"
-                >
-                  Patients
-                </Link>
-                <Link
-                  href="/alerts"
-                  className="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300 border-transparent text-amber-800/80 hover:text-violet-600 hover:border-violet-300/50"
-                >
-                  Alerts
-                </Link>
-                <Link
-                  href="/settings"
-                  className="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300 border-transparent text-amber-800/80 hover:text-violet-600 hover:border-violet-300/50"
-                >
-                  Settings
-                </Link>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <button
-                onClick={handleLogout}
-                className="text-amber-800/80 hover:text-orange-600 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-orange-50/70 hover:shadow-sm border border-transparent hover:border-orange-200/50"
-              >
-                Logout
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8">
         <div className="mb-6">

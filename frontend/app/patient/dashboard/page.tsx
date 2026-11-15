@@ -6,6 +6,7 @@ import { patientSelfAPI } from '@/lib/api';
 import PatientAuthGuard from '@/components/PatientAuthGuard';
 import { removeToken } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
+import CareSureLogo from '@/components/CareSureLogo';
 
 interface Patient {
   id: number;
@@ -176,33 +177,24 @@ export default function PatientDashboardPage() {
         </div>
 
         {/* Navbar */}
-        <nav className="bg-white/80 backdrop-blur-xl shadow-md border-b border-orange-200/60 sticky top-0 z-50 relative">
+        <nav className="bg-white/90 backdrop-blur-xl shadow-sm border-b border-[#e8dccb] sticky top-0 z-50 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
               <div className="flex items-center gap-3">
-                <Image
-                  src="/logo.png"
-                  alt="CareSure Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-                <div>
-                  <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-600 via-rose-500 to-violet-600 bg-clip-text text-transparent drop-shadow-sm">
-                    CareSure
-                  </h1>
-                  <span className="text-xs text-amber-800/70 font-medium">Patient Portal</span>
-                </div>
+                <CareSureLogo variant="dark" size="sm" href="/patient/dashboard" />
+                <span className="text-xs text-[#8c7464] font-medium bg-[#f5ebe1] px-2.5 py-1 rounded-full border border-[#e8dccb]">
+                  Patient Portal
+                </span>
               </div>
               <div className="flex items-center gap-4">
                 {patient && (
-                  <span className="text-amber-800/80 font-medium hidden sm:inline">
+                  <span className="text-[#5a3e2b] font-medium hidden sm:inline">
                     Welcome, {patient.name}
                   </span>
                 )}
                 <button
                   onClick={handleLogout}
-                  className="text-amber-800/80 hover:text-orange-600 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-orange-50/70 hover:shadow-sm border border-transparent hover:border-orange-200/50"
+                  className="text-[#6b5344] hover:text-[#8c4a35] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#ede0d0]/60 hover:shadow-sm border border-transparent hover:border-[#e8dccb]"
                 >
                   Logout
                 </button>
