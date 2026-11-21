@@ -55,7 +55,7 @@ export default function SignupPage() {
         <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-8 border border-[#e8dccb]">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#4a2e1e]">
-              Create your <span className="text-[#8c4a35]">CareSure</span> account
+              Create your <span className="text-[#8c4a35]">PillVox</span> account
             </h2>
             <p className="mt-4 text-center text-sm text-[#735d4e]">
               Or{' '}

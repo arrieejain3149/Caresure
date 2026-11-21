@@ -33,7 +33,7 @@ router.post('/register', validateRegister, async (req, res) => {
     // Prevent admin emails from being registered
     const adminEmails = process.env.ADMIN_EMAILS 
       ? process.env.ADMIN_EMAILS.split(',').map(e => e.trim())
-      : ['admin@jklu.edu.in', 'admin@caresure.com'];
+      : ['admin@jklu.edu.in', 'admin@pillvox.com', 'admin@caresure.com'];
     
     if (adminEmails.includes(email.toLowerCase())) {
       return res.status(403).json({ error: 'This email cannot be used for registration' });

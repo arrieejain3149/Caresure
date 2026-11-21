@@ -98,7 +98,7 @@ app.use('/api/patient', require('./routes/patient'));
 // Root route
 app.get('/', (req, res) => {
   res.json({
-    message: 'CareSure Backend API',
+    message: 'PillVox Backend API',
     version: '1.0.0',
     status: 'running',
     endpoints: {
@@ -119,7 +119,7 @@ app.get('/api/health', (req, res) => {
   const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
   res.json({
     status: 'ok',
-    message: 'CareSure API is running',
+    message: 'PillVox API is running',
     database: dbStatus
   });
 });
@@ -128,7 +128,7 @@ app.get('/api/health', (req, res) => {
 initDatabase()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`🚀 CareSure Backend Server running on port ${PORT}`);
+      console.log(`🚀 PillVox Backend Server running on port ${PORT}`);
       console.log(`📡 API available at http://localhost:${PORT}/api`);
     });
   })
@@ -137,7 +137,7 @@ initDatabase()
     console.log('👉 Tip: Start MongoDB locally or set MONGODB_URI in backend/.env to your MongoDB Atlas connection string.');
     console.log(`🚀 Starting Express server on port ${PORT} for API & health check...`);
     app.listen(PORT, () => {
-      console.log(`🚀 CareSure Backend Server running on port ${PORT} (Database pending connection)`);
+      console.log(`🚀 PillVox Backend Server running on port ${PORT} (Database pending connection)`);
       console.log(`📡 API available at http://localhost:${PORT}/api`);
     });
   });

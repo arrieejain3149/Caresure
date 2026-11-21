@@ -17,12 +17,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "CareSure - Smart Medication Management",
+  title: "PillVox - Smart Medication Management",
   description: "Caregivers stay informed. Elders stay safe.",
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'CareSure',
+    title: 'PillVox',
   },
   formatDetection: {
     telephone: false,
@@ -41,7 +41,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ff6b35" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="CareSure" />
+        <meta name="apple-mobile-web-app-title" content="PillVox" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className={`${inter.variable} antialiased`}>

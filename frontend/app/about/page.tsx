@@ -15,14 +15,14 @@ export default function AboutPage() {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 className="text-4xl font-bold text-[#4a2e1e] mb-8 drop-shadow-sm">
-          About CareSure
+          About PillVox
         </h1>
 
         <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-[#ede0d0] p-8 space-y-6">
           <section>
             <h2 className="text-2xl font-semibold text-[#4a2e1e] mb-4">Our Mission</h2>
             <p className="text-[#6e5d4f] leading-relaxed">
-              CareSure is a smart medication management system designed to help caregivers stay 
+              PillVox is a smart medication management system designed to help caregivers stay 
               informed while ensuring elders stay safe. We understand the challenges of managing 
               medications for loved ones, and our platform provides the tools and peace of mind 
               you need.
@@ -82,9 +82,9 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-[#4a2e1e] mb-4">Why CareSure?</h2>
+            <h2 className="text-2xl font-semibold text-[#4a2e1e] mb-4">Why PillVox?</h2>
             <p className="text-[#6e5d4f] leading-relaxed">
-              Managing medications for elderly loved ones can be overwhelming. CareSure simplifies 
+              Managing medications for elderly loved ones can be overwhelming. PillVox simplifies 
               this process by providing a centralized platform where caregivers can monitor medication 
               schedules, receive timely alerts, and maintain comprehensive health records. Our goal is 
               to give you peace of mind while ensuring the safety and well-being of those you care for.

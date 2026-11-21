@@ -4,7 +4,7 @@ const isAdmin = async (req, res, next) => {
     // Get admin emails from environment or use default
     const adminEmails = process.env.ADMIN_EMAILS 
       ? process.env.ADMIN_EMAILS.split(',').map(e => e.trim())
-      : ['admin@jklu.edu.in', 'admin@caresure.com']; // Default admin emails
+      : ['admin@jklu.edu.in', 'admin@pillvox.com', 'admin@caresure.com']; // Default admin emails
 
     // Check if user email is in admin list
     if (!req.user || !req.user.email) {

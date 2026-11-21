@@ -210,7 +210,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="py-6 mt-12 text-center text-white/70 text-sm border-t border-white/15">
-          <p className="font-semibold">&copy; 2026 CareSure. All rights reserved.</p>
+          <p className="font-semibold">&copy; 2026 PillVox. All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link href="/about" className="hover:text-[#ede0d0] transition-colors font-medium">About</Link>
             <Link href="/hardware" className="hover:text-[#ede0d0] transition-colors font-medium">3D Hardware</Link>

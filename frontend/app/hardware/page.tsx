@@ -572,7 +572,7 @@ export default function HardwarePage() {
               Hardware Blueprint
             </h1>
             <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
-              Interactive 3D exploration of the CareSure Smart Medicine Box
+              Interactive 3D exploration of the PillVox Smart Medicine Box
             </p>
             
             {/* Prototype Selector */}
@@ -629,7 +629,7 @@ export default function HardwarePage() {
                 }}
               >
                 <span className="text-xl sm:text-2xl">🛒</span>
-                <span className="hidden sm:inline">Purchase CareSure Device</span>
+                <span className="hidden sm:inline">Purchase PillVox Device</span>
                 <span className="sm:hidden">Purchase Device</span>
                 <span className="text-lg sm:text-xl">→</span>
               </a>
@@ -881,7 +881,7 @@ export default function HardwarePage() {
               }}
             >
               <span className="text-lg sm:text-xl">🛒</span>
-              <span className="hidden sm:inline">Purchase CareSure Device</span>
+              <span className="hidden sm:inline">Purchase PillVox Device</span>
               <span className="sm:hidden">Purchase Device</span>
               <span className="text-base sm:text-lg">→</span>
             </a>
@@ -919,7 +919,7 @@ export default function HardwarePage() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">Ready to Get Started?</h3>
-                    <p className="text-gray-300">Purchase your CareSure Smart Medicine Box today</p>
+                    <p className="text-gray-300">Purchase your PillVox Smart Medicine Box today</p>
                   </div>
                   <a
                     href="https://payments.cashfree.com/forms?code=dfweg"
@@ -1212,12 +1212,12 @@ export default function HardwarePage() {
                     </h3>
                     <div className="space-y-4">
                       {[
-                        { num: 1, title: 'Main Overview', desc: 'This is the CareSure Smart Medicine Box with 8 compartments, each designed for Indian blister packs.', bgClass: 'bg-emerald-500/10', borderClass: 'border-emerald-500', textClass: 'text-emerald-400' },
+                        { num: 1, title: 'Main Overview', desc: 'This is the PillVox Smart Medicine Box with 8 compartments, each designed for Indian blister packs.', bgClass: 'bg-emerald-500/10', borderClass: 'border-emerald-500', textClass: 'text-emerald-400' },
                         { num: 2, title: 'Compartment Zone', desc: 'These white strips are the medicine trays. Green and red LEDs indicate the status — green for dose time and red for missed/wrong access.', bgClass: 'bg-blue-500/10', borderClass: 'border-blue-500', textClass: 'text-blue-400' },
                         { num: 3, title: 'Sensors', desc: 'Every compartment includes a micro-switch sensor to detect openings. A hall sensor near the lid detects when the entire box is opened.', bgClass: 'bg-purple-500/10', borderClass: 'border-purple-500', textClass: 'text-purple-400' },
                         { num: 4, title: 'Electronics Section', desc: 'This front panel houses the microcontroller, WiFi module, battery management system, and buzzer.', bgClass: 'bg-orange-500/10', borderClass: 'border-orange-500', textClass: 'text-orange-400' },
                         { num: 5, title: 'Dose Event', desc: 'When it\'s time for a medicine: The buzzer sounds, the correct compartment glows green, opening the compartment sends a \'dose taken\' signal to the caregiver app.', bgClass: 'bg-rose-500/10', borderClass: 'border-rose-500', textClass: 'text-rose-400' },
-                        { num: 6, title: 'Connectivity', desc: 'The entire box syncs in real-time with the CareSure cloud platform.', bgClass: 'bg-violet-500/10', borderClass: 'border-violet-500', textClass: 'text-violet-400' },
+                        { num: 6, title: 'Connectivity', desc: 'The entire box syncs in real-time with the PillVox cloud platform.', bgClass: 'bg-violet-500/10', borderClass: 'border-violet-500', textClass: 'text-violet-400' },
                       ].map((step) => (
                         <div key={step.num} className={`${step.bgClass} p-6 rounded-2xl border-l-4 ${step.borderClass}`}>
                           <div className="flex items-start">
@@ -1239,7 +1239,7 @@ export default function HardwarePage() {
                       🔧 Prototype Setup Guide (Arduino/ESP32)
                     </h3>
                     <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-                      Since the production device isn't available yet, you can build a working prototype using Arduino/ESP32 for demonstration and testing. This guide will help you create a functional prototype that connects to the CareSure platform.
+                      Since the production device isn't available yet, you can build a working prototype using Arduino/ESP32 for demonstration and testing. This guide will help you create a functional prototype that connects to the PillVox platform.
                     </p>
 
                     {/* Components Needed */}
@@ -1437,7 +1437,7 @@ void sendEvent(String eventType, int compartment = 0) {
                         <div className="flex items-start">
                           <span className="text-3xl font-bold text-green-400 mr-4">4</span>
                           <div className="flex-1">
-                            <h4 className="font-bold text-white mb-3 text-xl">Connect to CareSure Backend</h4>
+                            <h4 className="font-bold text-white mb-3 text-xl">Connect to PillVox Backend</h4>
                             <div className="space-y-3">
                               <div className="bg-emerald-500/10 p-4 rounded-lg border border-emerald-500/30">
                                 <h5 className="font-semibold text-white mb-2">Device Registration:</h5>
@@ -1547,7 +1547,7 @@ void sendEvent(String eventType, int compartment = 0) {
         {/* Footer */}
         <footer className="py-8 px-6 border-t border-white/10">
           <div className="max-w-7xl mx-auto text-center text-gray-400">
-            <p>CareSure Hardware Blueprint & 3D Model Explanation</p>
+            <p>PillVox Hardware Blueprint & 3D Model Explanation</p>
           </div>
         </footer>
       </div>

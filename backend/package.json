@@ -1,7 +1,7 @@
 {
-  "name": "caresure_backend",
+  "name": "pillvox_backend",
   "version": "1.0.0",
-  "description": "CareSure Backend API",
+  "description": "PillVox Backend API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

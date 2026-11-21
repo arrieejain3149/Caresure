@@ -46,7 +46,7 @@ export default function CareSureLogo({
     <div className={`flex items-center gap-2 sm:gap-2.5 group transition-transform active:scale-95 ${className}`}>
       {showText && (
         <span className={`font-light uppercase transition-colors select-none ${textSizes} ${textColor}`}>
-          CareSure
+          PillVox
         </span>
       )}
       <svg
@@ -62,7 +62,7 @@ export default function CareSureLogo({
 
   if (href) {
     return (
-      <Link href={href} title="CareSure">
+      <Link href={href} title="PillVox">
         {content}
       </Link>
     );

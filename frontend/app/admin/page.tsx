@@ -137,7 +137,7 @@ export default function AdminPage() {
                       </p>
                       <ul className="text-[#7c6a5a] text-sm space-y-1 list-disc list-inside">
                         <li>Your email must be added to the admin list in the backend</li>
-                        <li>Default admin emails: admin@jklu.edu.in, admin@caresure.com</li>
+                        <li>Default admin emails: admin@jklu.edu.in, admin@pillvox.com</li>
                         <li>Or set ADMIN_EMAILS environment variable in backend</li>
                         <li>Contact your system administrator to add your email</li>
                       </ul>

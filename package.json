@@ -1,7 +1,7 @@
 {
-  "name": "caresure",
+  "name": "pillvox",
   "version": "1.0.0",
-  "description": "CareSure - Smart Medication Management System",
+  "description": "PillVox - Smart Medication Management System",
   "scripts": {
     "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"cyan,magenta\" \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
     "dev:backend": "npm --prefix backend run dev",

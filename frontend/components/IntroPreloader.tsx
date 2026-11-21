@@ -60,7 +60,7 @@ export default function IntroPreloader({ onComplete }: IntroPreloaderProps) {
       style={{
         transitionDuration: '900ms',
       }}
-      aria-label="CareSure Intro"
+      aria-label="PillVox Intro"
       role="dialog"
       aria-modal="true"
     >
